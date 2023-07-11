@@ -127,8 +127,9 @@ body {
   display: flex;
   position: absolute;
   bottom: 0;
-  left: 10%;
+  left: 50%;
   justify-content: space-evenly;
   align-items: center;
   width: 50%;
+  transform: translate(-50%, 0%);
 }

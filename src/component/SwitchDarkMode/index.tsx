@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 const SwitchDarkMode = () => {
-  const [toggleTheme, setToggleTheme] = useState<boolean>(false);
+  const [toggleTheme, setToggleTheme] = useState<boolean>(true);
 
   function handleToggle(e: any) {
     if (e.target.checked) {
@@ -17,12 +17,15 @@ const SwitchDarkMode = () => {
   }
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
+    if (toggleTheme) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
     if (currentTheme) {
       const isDarkTheme = currentTheme.includes("dark");
       document.documentElement.setAttribute("data-theme", currentTheme);
       setToggleTheme(isDarkTheme);
     }
-  }, []);
+  }, [toggleTheme]);
   return (
     <div className="theme-switch-wrapper">
       <label className="theme-switch" htmlFor="checkbox">
