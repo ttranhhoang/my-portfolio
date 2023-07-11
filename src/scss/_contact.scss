@@ -1,0 +1,159 @@
+.contact {
+  display: flex;
+  flex-direction: row;
+  gap: 0 20px;
+  padding: 30px 20px;
+  overflow: hidden;
+  &_earth {
+    flex: 1;
+    height: auto;
+    cursor: pointer;
+  }
+  &_social {
+    flex: 0.75;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    padding: 10px 15px;
+  }
+  &_heading {
+    color: black;
+    font-size: 35px;
+    padding: 0px 10px;
+    font-weight: 900;
+  }
+  &_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 20px;
+
+    width: 100%;
+    padding: 5px 15px;
+
+    border-bottom: 1px solid pink;
+
+    // box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    &:last-child {
+      border: none;
+    }
+  }
+  &_icon {
+    font-size: 30px;
+    color: $clr-pink-light;
+  }
+  &_info {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: $clr-black;
+
+    &-text {
+      line-height: 2rem;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    &-textgrey {
+      color: $clr-grey-6;
+    }
+  }
+}
+.form {
+  &_contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    & form {
+      width: 100%;
+    }
+  }
+  &_row {
+    display: flex;
+    width: 100%;
+  }
+  &_control {
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    &.btn {
+      display: flex;
+      justify-content: flex-end;
+    }
+    & input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      background: $clr-grey-9;
+      color: $clr-black;
+      font-size: 16px;
+      font-family: $ff-secondary;
+      border: none;
+      border-radius: 5px;
+      resize: none;
+    }
+    & input[type="submit"] {
+      //width: 100%;
+      background: $clr-grey-9;
+      font-size: 16px;
+
+      font-weight: 700;
+      font-family: $ff-secondary;
+      padding: 10px 30px;
+
+      letter-spacing: 2px;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      &:hover {
+        background: $clr-grey-5;
+        transition: cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact {
+    // grid-template-columns: 1fr;
+    flex-direction: column-reverse;
+
+    &_social {
+      margin-bottom: 20px;
+    }
+    &_earth {
+      width: 100%;
+      height: 550px;
+    }
+    &_heading {
+      padding: 10px;
+      font-size: 28px;
+      text-align: center;
+    }
+    &_info {
+      &-text {
+        font-size: 14px;
+      }
+      &-textgrey {
+        font-size: 12px;
+      }
+    }
+    &_icon {
+      font-size: 25px;
+    }
+  }
+  .form {
+    &_control {
+      & input[type="text"],
+      input[type="email"],
+      textarea {
+        font-size: 12px;
+      }
+      & input[type="submit"] {
+        background: $clr-grey-9;
+        font-size: 12px;
+      }
+    }
+  }
+}

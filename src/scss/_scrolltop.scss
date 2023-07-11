@@ -1,0 +1,37 @@
+.scrollTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  font-size: 25px;
+  color: var(--white);
+  background: var(--color);
+  cursor: pointer;
+  &.sticky {
+    position: sticky;
+    bottom: 0;
+    left: 100%;
+  }
+  &-arrow {
+    animation: arrow-right 0.8s infinite;
+  }
+}
+
+@keyframes arrow-right {
+  0% {
+    transform: scale(1.5) translateY(0);
+  }
+  33% {
+    transform: scale(1.5) translateY(-5px);
+  }
+  66% {
+    transform: scale(1.5) translateY(5px);
+  }
+  100% {
+    transform: scale(1.5) translateY(0);
+  }
+}
